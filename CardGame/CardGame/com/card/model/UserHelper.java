@@ -11,7 +11,7 @@ public class UserHelper {
 
     public static void register(String username, String password) {
         HashMap<String, User> maps = getUserMap();
-        if (maps.containsKey(username)) {
+        if (maps.containsKey(username)) {//the account has already existed
             System.out.println("\n");
             System.out.println("username has been used already");
             return;
@@ -26,13 +26,13 @@ public class UserHelper {
 
     public static User login(String username, String password) {
         HashMap<String, User> maps = getUserMap();
-        if (!maps.containsKey(username)) {
+        if (!maps.containsKey(username)) {//wrong(invalid) username input
             System.out.println("\n");
             System.out.println("no such user!please register first");
             return null;
         }
         User user = maps.get(username);
-        if (!password.equals(user.getPassword())) {
+        if (!password.equals(user.getPassword())) {//wrong password input
             System.out.println("\n");
             System.out.println("password not match!");
             return null;
@@ -43,7 +43,7 @@ public class UserHelper {
         return user;
     }
 
-    private static HashMap<String, User> getUserMap() {
+    private static HashMap<String, User> getUserMap() {//function for serialising (betwwen json and java)
         testFile();
         HashMap<String, User> maps = new HashMap<>();
         Gson gson = new Gson();

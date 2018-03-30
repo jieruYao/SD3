@@ -16,25 +16,25 @@ public class Shop {
             instance = new Shop();
         return instance;
     }
-
+    //set name of soliders that shown in the shop
     private String[] names = {"Jack", "Ross", "Mike", "Ketty", "Simple",
             "Osca", "Alpha", "Betta", "Sigma", "Dinphine",
             "Slina", "Hallen", "Motor", "Terry", "Sadi",
             "Gate", "Dog", "Stiphe", "Agel", "Baby",
             "Testal", "Vettu", "Uoni", "Django", "Java",};
-
+    //set specialism of Capitain and Hierophant that shown in the shop
     private Specialism[] jobs = {Specialism.A, Specialism.A, Specialism.A, Specialism.A, Specialism.A,
             Specialism.B, Specialism.B, Specialism.B, Specialism.B, Specialism.B,
             Specialism.A, Specialism.A, Specialism.A, Specialism.A, Specialism.A,
             Specialism.B, Specialism.B, Specialism.B, Specialism.B, Specialism.B,
             Specialism.A, Specialism.A, Specialism.A, Specialism.A, Specialism.A};
-
+    //set health of soliders that shown in the shop
     private int[] healths = {100, 200, 300, 400, 100,
             100, 700, 800, 900, 1000,
             1050, 950, 750, 650, 450,
             250, 150, 750, 650, 440,
             444, 343, 234, 343, 456};
-
+    //set the price of the soliders that shown in the shop
     private int[] credits = {40, 50, 30, 40, 50,
             60, 70, 80, 90, 100,
             120, 170, 200, 300, 400,
@@ -43,7 +43,7 @@ public class Shop {
 
     private ArrayList<Soldier> soldiers;
 
-    public void initData() {
+    public void initData() {//innital the data for soldiers
         soldiers = new ArrayList<>();
         for (int i = 0; i < number; i++) {
             if (i % 3 == 0)
@@ -55,7 +55,7 @@ public class Shop {
         }
     }
 
-    public void showSoldiers() {
+    public void showSoldiers() {//shown soldiers information
         System.out.println("=========================================Soldier Shop==========================================");
         System.out.println("The soldiers in my shop is as follows:\n");
         for (int i = 0; i < number; i++) {

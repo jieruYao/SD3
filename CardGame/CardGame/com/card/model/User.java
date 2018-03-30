@@ -24,7 +24,7 @@ public class User {
         credit = 500;
     }
 
-    public void buySoldier(Scanner scanner, boolean isFirst) {
+    public void buySoldier(Scanner scanner, boolean isFirst) {//buy soldiers in the shop
         Shop shop = Shop.getInstance();
         if (isFirst)
             shop.showSoldiers();
@@ -38,12 +38,12 @@ public class User {
             } else {
                 Soldier soldier = shop.getSoldier(choose);
                 if (soldier != null) {
-                    if (soldier.getCredit() > getCredit()) {
+                    if (soldier.getCredit() > getCredit()) {//not enough credits to buy
                         System.out.println("\nSorry,you credit is not enough.");
                         buySoldier(scanner, false);
                     } else {
                         roster.addSolider(soldier);
-                        setCredit(credit - soldier.getCredit());
+                        setCredit(credit - soldier.getCredit());//calculate the balance after a purchase
                         System.out.println("\nBuy " + soldier.getName() + " Successfully, the credit is " + credit + " left.");
                         buySoldier(scanner, false);
                     }

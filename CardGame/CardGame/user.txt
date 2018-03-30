@@ -1,3 +1,0 @@
-{"roster":{"soldiers":[{"health":600,"name":"Osca","credit":60}]},"team":{"soldiers":[{"health":500,"name":"Simple","credit":50}]},"username":"wangyu","password":"19970819wy","credit":500}
-{"roster":{"soldiers":[{"health":100,"name":"Simple","credit":50}]},"team":{"soldiers":[{"health":100,"name":"Osca","credit":60}]},"username":"test","password":"test","credit":500}
-{"roster":{"soldiers":[]},"team":{"soldiers":[{"health":100,"name":"Simple","credit":50},{"health":100,"name":"Osca","credit":60},{"specialism":"B","experience":0,"health":900,"name":"Sigma","credit":90}]},"username":"ttt","password":"ttt","credit":410}

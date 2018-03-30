@@ -43,7 +43,7 @@ public class Captain extends Soldier {
     }
 
     @Override
-    public String toString() {
+    public String toString() {//transfer the format to string
         return String.format("  Captain  : [ name: %6s   health: %5s  specialism: %2s  experience: %4d  price: %5d ]", getName(), getHealth(), specialism, experience, getCredit());
     }
 }

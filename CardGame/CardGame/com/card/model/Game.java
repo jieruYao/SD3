@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class Game {
     private User user;
-    private boolean logout_flag = false;
+    private boolean logout_flag = false;//login status
 
 
-    public void login(Scanner scanner) {
+    public void login(Scanner scanner) {//login function
         String username;
         String password;
         System.out.println();
@@ -16,7 +16,7 @@ public class Game {
         scanner.nextLine();
         System.out.println("Please enter you username: ");
         username = scanner.nextLine();
-        while (username.trim().isEmpty()) {
+        while (username.trim().isEmpty()) {//the user does not enter a username
             System.out.println("User name should not be empty.");
             System.out.println("Please enter you username: ");
             username = scanner.nextLine();
@@ -39,7 +39,7 @@ public class Game {
         }
     }
 
-    private void startSecondMenu(Scanner scanner) {
+    private void startSecondMenu(Scanner scanner) {//show the menu when a user login sucessfully
         int choose;
         System.out.println("===========================================Welcome to my card game=============================================");
         System.out.println("1   my info");
@@ -83,13 +83,13 @@ public class Game {
         }
     }
 
-    private void logout() {
+    private void logout() {//set logout status
         logout_flag = true;
         user = null;
         System.out.println("Log out Successfully!!");
     }
 
-    private void move2Roster(Scanner scanner) {
+    private void move2Roster(Scanner scanner) {//move the soliders from squad(team) to roster
         System.out.println("\n");
         if (user.getTeam().getSize() == 0) {
             System.out.println("You have no soldier in your team, please add from roster first");
@@ -115,7 +115,7 @@ public class Game {
         System.out.println("\n");
     }
 
-    private void move2Team(Scanner scanner) {
+    private void move2Team(Scanner scanner) {//move soliders from roster to squad(team)
         System.out.println("\n");
         if (user.getRoster().getSize() == 0) {
             System.out.println("\n");
@@ -147,7 +147,7 @@ public class Game {
             startMenu(scanner);
     }
 
-    public void startMenu(Scanner scanner) {
+    public void startMenu(Scanner scanner) {//the main menu for registration and login
         int choose;
         System.out.println("===========================================Welcome to my card game=============================================");
         System.out.println("1   login");
@@ -171,7 +171,7 @@ public class Game {
         }
     }
 
-    public void register(Scanner scanner) {
+    public void register(Scanner scanner) {//register function
         String username;
         String password;
         System.out.println();
@@ -194,7 +194,7 @@ public class Game {
         UserHelper.register(username, password);
     }
 
-    public void playWithComputer() {
+    public void playWithComputer() {//the local battle function
         Team team = user.getTeam();
         Team pcTeam = Shop.getInstance().getRandomTeam(user.getTeam().getSize());
         if (user.getTeam().getSize() == 0) {
@@ -224,6 +224,7 @@ public class Game {
                 Thread.sleep(2000);
                 int harm;
                 System.out.println();
+				//battle rule
                 if (term == 0) {
                     System.out.println("User's " + (user_dead_index + 1) + " solider " + team.getSoldier(user_dead_index).getName() + " term");
                     harm = getRandomHarm();
@@ -274,7 +275,7 @@ public class Game {
         }
     }
 
-    private int getRandomHarm() {
+    private int getRandomHarm() {//get random harm(D100)
         Random random = new Random();
         return random.nextInt(100) + 1;
     }

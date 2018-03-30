@@ -56,7 +56,8 @@ public class Team {
         System.out.println("\n=============================================Team=============================================");
     }
 
-    public void isWin(boolean flag) {
+    public void isWin(boolean flag) {//if the player is win, the experience of the Captain and the Hierophant will increase 10
+	                                 //if the player is loss, the experence of the Captain and the Hierophant will decrease 2
         for (Soldier soldier : soldiers) {
             if (flag) {
                 if (soldier instanceof Hierophant)

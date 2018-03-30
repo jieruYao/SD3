@@ -1,0 +1,21 @@
+#bin/bash!
+CLASS_PATH=lib
+BUILD_PATH=build
+BUILD_FOLDER="com/card/model"
+PACKAGE_NAME=com.card.model  
+MAIN_CLASS=$PACKAGE_NAME.Game  
+echo "enter  'run'  [build and run the project] or  'clean'  [clean the cache and data] commond."  
+read key  
+case "$key" in  
+    run)  
+    echo "java files are building ..."  
+    rm -rf "$BUILD_PATH/*"
+    javac -cp "$CLASS_PATH/*" "$BUILD_FOLDER"/*.java -d $BUILD_PATH
+    echo "build finished, java is running..."
+    cd $BUILD_PATH
+    java -cp ../$CLASS_PATH/*: $MAIN_CLASS
+    ;;  
+    clean)  
+    rm -rf $BUILD_PATH/*
+    ;;  
+esac  
